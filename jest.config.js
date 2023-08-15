@@ -3,7 +3,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'ts'],
   testMatch: [
     // "<rootDir>/src/**/__tests__/**/*.test.ts",
-    '<rootDir>/test/**/*.test.ts',
+    '<rootDir>/test/**/*.test.js',
   ],
   testPathIgnorePatterns: ['/node_modules/', '/fixtures/'],
   transform: {
