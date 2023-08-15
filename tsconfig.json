@@ -6,6 +6,7 @@
     "declaration": true,
     "outDir": "./esm",
     "rootDir": "./",
+    "allowJs": true,
     "importHelpers": true,
     "downlevelIteration": true,
     "strict": true,

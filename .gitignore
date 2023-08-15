@@ -19,3 +19,6 @@ package-lock.json
 .eslintcache
 .history
 .now
+sources
+notes
+yarn-error.log
