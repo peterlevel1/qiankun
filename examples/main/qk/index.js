@@ -8,6 +8,9 @@ registerMicroApps([
     container: '#subapp-viewport',
     // loader,
     activeRule: '/vue',
+    props: {
+      msg: '[vue]: hello world',
+    },
   },
 ]);
 

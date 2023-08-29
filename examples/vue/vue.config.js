@@ -16,7 +16,7 @@ module.exports = {
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
   outputDir: 'dist',
-  assetsDir: 'static',
+  assetsDir: 'public',
   filenameHashing: true,
   // tweak internal webpack configuration.
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
