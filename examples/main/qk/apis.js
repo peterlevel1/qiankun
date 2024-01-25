@@ -1,4 +1,5 @@
 import { registerApplication, start as singleSpaStart } from 'single-spa';
+import noop from 'lodash/noop';
 import { getLogger } from './utils/logger.util';
 import { loadApp } from './loader';
 
@@ -16,6 +17,8 @@ export const registerMicroApps = (apps, lifecycles) => {
     if (found) {
       continue;
     }
+
+    if (!app.loader) app.loader = noop;
 
     const opts = {
       name: app.name,

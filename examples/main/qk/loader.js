@@ -82,6 +82,8 @@ function getRender(appInstanceId, appContent, legacyRender) {
 export const loadApp = async (app, configuration, lifecycles) => {
   logger.info('loadApp - app: %o, lifecycles: %o', app, lifecycles);
 
+  app.loader(true);
+
   const {
     singular = false,
     sandbox = true,
@@ -169,6 +171,9 @@ export const loadApp = async (app, configuration, lifecycles) => {
         // container.appendChild(initialAppWrapperElement);
       },
       async () => execHooksChain(toArray(afterMount), app, global),
+      async () => {
+        app.loader(false);
+      },
     ],
   };
 
