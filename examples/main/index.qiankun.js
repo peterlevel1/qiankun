@@ -1,7 +1,6 @@
-// import 'zone.js'; // for angular subapp
-import './qk';
-import { initGlobalState, registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from '../../es';
+import 'zone.js'; // for angular subapp
 import './index.less';
+import { initGlobalState, registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from '../../es';
 
 /**
  * 主应用 **可以使用任意技术栈**

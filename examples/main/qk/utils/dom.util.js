@@ -7,6 +7,14 @@ import { getLogger } from '../utils/logger.util';
 const logger = getLogger('examples/main/qk/utils/dom.util.js');
 
 /**
+ * @param {string | HTMLElement} container
+ * @returns {HTMLElement | null}
+ */
+export function getContainer(container) {
+  return typeof container === 'string' ? document.querySelector(container) : container;
+}
+
+/**
  * create element
  * @param {string} appContent
  * @param {boolean} strictStyleIsolation
@@ -15,6 +23,13 @@ const logger = getLogger('examples/main/qk/utils/dom.util.js');
  * @returns {HTMLElement}
  */
 export function createElement(appContent, strictStyleIsolation = false, scopedCSS = true, appInstanceId) {
+  logger.info(
+    'createElement - strictStyleIsolation: %s, scopedCSS: %s, appInstanceId: %s',
+    strictStyleIsolation,
+    scopedCSS,
+    appInstanceId,
+  );
+
   const containerElement = NATIVE_DOCUMENT.createElement('div');
   containerElement.innerHTML = appContent;
   // appContent always wrapped with a singular div

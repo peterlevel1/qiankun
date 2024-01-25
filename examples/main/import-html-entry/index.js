@@ -5,5 +5,5 @@ const logger = getLogger('import-html-entry');
 
 (async () => {
   const result = await importEntry('http://localhost:7101');
-  logger.info('result: %o', result);
+  logger.info('importEntry - result: %o', result);
 })();

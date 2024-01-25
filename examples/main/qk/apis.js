@@ -5,14 +5,17 @@ import { loadApp } from './loader';
 const logger = getLogger('apis');
 const appsRegistered = [];
 
+let frameworkConfiguration = {};
+
 export const registerMicroApps = (apps, lifecycles) => {
+  logger.info('registerMicroApps - apps: %o, lifecycles: %o', apps, lifecycles);
+
   for (const app of apps) {
     const found = !!appsRegistered.find((loadedApp) => loadedApp.name === app.name);
 
     if (found) {
       continue;
     }
-    logger.info('app: %o', app);
 
     const opts = {
       name: app.name,
@@ -21,10 +24,7 @@ export const registerMicroApps = (apps, lifecycles) => {
         return loc.pathname.startsWith(app.activeRule);
       },
       async app() {
-        logger.info('%s - loadingFn called', app.name);
-        const loadedResult = await loadApp(app, lifecycles);
-        logger.info('loadedResult: %o', loadedResult);
-        return loadedResult;
+        return await loadApp(app, frameworkConfiguration, lifecycles);
       },
     };
 

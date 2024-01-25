@@ -38,6 +38,7 @@ module.exports = {
     resolve: {
       alias: {
         '@': resolve('src'),
+        qk: path.join(__dirname, '../main/qk'),
       },
     },
     output: {
