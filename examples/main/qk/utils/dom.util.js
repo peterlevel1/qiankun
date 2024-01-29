@@ -18,7 +18,7 @@ export function getContainer(container) {
  * create element
  * @param {string} appContent
  * @param {boolean} strictStyleIsolation
- * @param {string} scopedCSS
+ * @param {boolean} scopedCSS
  * @param {string} appInstanceId
  * @returns {HTMLElement}
  */

@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { name } = require('./package');
 
@@ -22,6 +23,10 @@ module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      'single-spa': path.resolve('./single-spa/single-spa.js'),
+      'import-html-entry': path.resolve('./import-html-entry'),
+    },
   },
   module: {
     rules: [

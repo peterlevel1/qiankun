@@ -1,3 +1,6 @@
+/**
+ * @param {string} namespace
+ */
 export const getLogger = (namespace) => {
   const prefix = `%c[${namespace}] - `;
   const style = 'color: cyan;';
